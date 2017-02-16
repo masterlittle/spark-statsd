@@ -5,26 +5,11 @@ version := "1.0.0"
 
 organization := "spark.metrics"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.8"
 
-sparkVersion := "1.5.2"
+sparkVersion := "2.0.2"
 
 //sparkComponents += "core"
-
-spName := "vidhyaarvind/spark-statsd"
-
-spShortDescription := "Statsd metrics reporter for spark"
-
-spDescription := """Statsd metrics reporter for spark.
-                   |Helps spark to push metrics to statsd. See ReadMe for more details""".stripMargin
-
-licenses += "Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0")
-
-spAppendScalaVersion := true
-
-spIncludeMaven := true
-
-credentials += Credentials(Path.userHome / ".ivy2" / ".sbtcredentials")
 
 resolvers += "Bintray" at "https://dl.bintray.com/readytalk/maven"
 
@@ -50,30 +35,3 @@ assemblyMergeStrategy in assembly := {
           case _ => MergeStrategy.deduplicate
         }
     }
-
-publishMavenStyle := true
-
-publishArtifact in Test := false
-
-pomIncludeRepository := { _ => false }
-
-pomExtra := (
-  <url>https://github.com/vidhyaarvind/spark-statsd</url>
-  <licenses>
-    <license>
-      <name>Apache License, Verision 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  <scm>
-    <url>git@github.com:vidhyaarvind/spark-statsd.git</url>
-    <connection>scm:git:git@github.com:vidhyaarvind/spark-statsd.git</connection>
-  </scm>
-  <developers>
-    <developer>
-      <id>vidhyaarvind</id>
-      <name>Vidhya Arvind</name>
-      <url>https://github.com/vidhyaarvind</url>
-    </developer>
-  </developers>)
